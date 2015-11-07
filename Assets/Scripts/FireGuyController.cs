@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WaterGuyController : MonoBehaviour
+public class FireGuyController : MonoBehaviour
 {
     Rigidbody2D _rb;
 
