@@ -10,6 +10,9 @@ public class WaterGuyController : MonoBehaviour
     string Fire1 = "Fire1";
     string Fire2 = "Fire2";
     string StartButton = "Start";
+
+    public float speed = 0.1f;
+
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -25,6 +28,6 @@ public class WaterGuyController : MonoBehaviour
         float h = Input.GetAxis(Horizontal);
         float v = Input.GetAxis(Vertical);
 
-        transform.position = transform.position += new Vector3(v, h, 0);
+        transform.position = transform.position += new Vector3(h, v, 0) * speed;
     }
 }
