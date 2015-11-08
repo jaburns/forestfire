@@ -5,6 +5,8 @@ public class ForestGenerator : MonoBehaviour
     public GameObject TreePrefab;
     public Vector2 SpawnRange;
     public int SpawnCount;
+    public float SmallSize;
+    public float LargeSize;
 
     void Awake()
     {
@@ -19,8 +21,7 @@ public class ForestGenerator : MonoBehaviour
     TreeController spawnTree(Vector2 pos)
     {
         var treeObj = Instantiate(TreePrefab, pos.AsVector3(), Quaternion.identity) as GameObject;
-        treeObj.transform.localScale *= (1 + Random.value);
-        treeObj.transform.parent = transform;
+        treeObj.transform.localScale *= Random.value * (LargeSize - SmallSize) + SmallSize;
 
         var treeSpring = treeObj.GetComponent<SpringJoint2D>();
         treeSpring.connectedAnchor = treeObj.transform.position.AsVector2();

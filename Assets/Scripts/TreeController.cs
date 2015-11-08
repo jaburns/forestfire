@@ -3,26 +3,27 @@ using System.Collections;
 
 public class TreeController : MonoBehaviour
 {
-    public Material FireMaterial;
+    public Sprite fireSprite;
+    public Sprite greenSprite;
+    SpriteRenderer _spriteRenderer;
+    public GameObject FireParticals;
 
-    Renderer _renderer;
-    Material _originalMaterial;
-
+    
     void Awake()
     {
-        _renderer = GetComponent<Renderer>();
-        _originalMaterial = _renderer.material;
-
-        //if (Random.value < .5f) Message_SetFire();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        if (Random.value < .25f) Message_SetFire();
     }
 
     public void Message_SetFire()
     {
-        _renderer.material = FireMaterial;
+        _spriteRenderer.sprite = fireSprite;
+        FireParticals.SetActive(true);
     }
 
     public void Message_Splash()
     {
-        _renderer.material = _originalMaterial;
+        _spriteRenderer.sprite = greenSprite;
+        FireParticals.SetActive(false);
     }
 }
