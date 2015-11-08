@@ -9,6 +9,7 @@ public class WaterGuyController : MonoBehaviour
     public float WalkForce = 1.0f;
     public float dropletSpeed = 15f;
     public float maxVelocity = 15;
+    public float dropletCone = 30;
 
     public GameObject DropletPrefab;
 
@@ -54,7 +55,7 @@ public class WaterGuyController : MonoBehaviour
             walkForce = Vector2.zero;
             var waterForce = -faceVec * WaterForce;
             _rb.AddForce(waterForce);
-            var waterVec = faceVec.Rotate(10*Random.value - 5);
+            var waterVec = faceVec.Rotate(dropletCone*(Random.value - .5f));
             CreateDroplet(_rb.position + waterVec, waterVec * dropletSpeed);
             frictionForce *= Mathf.Abs(frictionForce.normalized.Cross(waterForce.normalized));
         }

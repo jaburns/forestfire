@@ -106,6 +106,7 @@ MonoBehaviour:
   WalkForce: 15
   dropletSpeed: 15
   maxVelocity: 30
+  dropletCone: 30
   DropletPrefab: {fileID: 124384, guid: 157c79da665eb464c92e1dc9bd5b895c, type: 2}
 --- !u!212 &21273656
 SpriteRenderer:
