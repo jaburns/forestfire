@@ -31,7 +31,7 @@ public class DropletController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        other.gameObject.SendMessage(Messages.Splash);
+        other.gameObject.SendMessage(Messages.Splash, SendMessageOptions.DontRequireReceiver);
         die();
     }
 }
