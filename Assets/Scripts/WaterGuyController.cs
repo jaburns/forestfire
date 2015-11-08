@@ -17,11 +17,24 @@ public class WaterGuyController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
     }
 
+    DropletController CreateDroplet(Vector2 pos, Vector2 vel)
+    {
+        var go = Instantiate(DropletPrefab, pos.AsVector3(), Quaternion.identity) as GameObject;
+        var droplet = go.GetComponent<DropletController>();
+        droplet.Initialize(vel);
+        return droplet;
+    }
+
     void FixedUpdate()
     {
         var stick = Inputs.GetStick(PlayerIndex);
 
         _rb.angularVelocity = 0;
+
+        var faceVec = new Vector2 {
+            x = Mathf.Cos(_rb.rotation * Mathf.Deg2Rad),
+            y = Mathf.Sin(_rb.rotation * Mathf.Deg2Rad)
+        };
 
         if (stick.sqrMagnitude > 0.25f) {
             var newDegs = Mathf.Rad2Deg * Mathf.Atan2(stick.y, stick.x);
@@ -30,11 +43,9 @@ public class WaterGuyController : MonoBehaviour
         }
 
         if (Inputs.GetButton(PlayerIndex, Inputs.Button.Fire1)) {
-            var faceVec = new Vector2 {
-                x = Mathf.Cos(_rb.rotation * Mathf.Deg2Rad),
-                y = Mathf.Sin(_rb.rotation * Mathf.Deg2Rad)
-            };
             _rb.AddForce(-faceVec * WaterForce);
+            var waterVec = faceVec.Rotate(10*Random.value - 5);
+            CreateDroplet(_rb.position + waterVec, waterVec * 5);
         } else {
             _rb.AddForce(-_rb.velocity * Friction);
         }
