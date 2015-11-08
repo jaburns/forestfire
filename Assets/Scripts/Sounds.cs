@@ -4,8 +4,8 @@ using System.Collections.Generic;
 static public class Sounds
 {
     readonly static Dictionary<string, float> VOLUMES = new Dictionary<string, float> {
-        { "explosion", 0.4f }
-      , { "base", 0.4f }
+        { "explosion", 1 }
+      , { "base", 1 }
     };
 
     static AudioSource _sounder;
@@ -33,6 +33,7 @@ static public class Sounds
             var go = new GameObject();
             go.name = "SOUNDS SOURCE";
             _sounder = go.AddComponent<AudioSource>();
+            _sounder.volume = 0.4f;
         }
 
         _sounder.PlayOneShot(clip, volume);
@@ -46,6 +47,7 @@ static public class Sounds
             _waterLooper = go.AddComponent<AudioSource>();
             _waterLooper.loop = true;
             _waterLooper.clip = Resources.Load("water") as AudioClip;
+            _waterLooper.volume = 0.1f;
         }
 
         if (on && !_waterLooper.isPlaying) {
