@@ -6,15 +6,17 @@ public class FireGuyController : MonoBehaviour
     public float SlerpSpeed = 0.2f;
     public float Friction = 1.0f;
     public float WalkForce = 1.0f;
+    public int FireBombPeriod = 10;
 
     public GameObject ExplosionPrefab;
 
     Rigidbody2D _rb;
-    bool _holdingFire;
+    int _nextBombCountdown;
 
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _nextBombCountdown = 0;
     }
 
     void FixedUpdate()
@@ -38,13 +40,14 @@ public class FireGuyController : MonoBehaviour
             walkForce = Vector2.zero;
         }
 
+        if (_nextBombCountdown > 0) _nextBombCountdown--;
+
         if (Inputs.GetButton(PlayerIndex, Inputs.Button.Fire2)) {
-            if (!_holdingFire) {
+            walkForce = Vector2.zero;
+            if (_nextBombCountdown == 0) {
+                _nextBombCountdown = FireBombPeriod;
                 fireBomb(faceVec);
             }
-            _holdingFire = true;
-        } else {
-            _holdingFire = false;
         }
 
         var frictionForce = -_rb.velocity * Friction;
