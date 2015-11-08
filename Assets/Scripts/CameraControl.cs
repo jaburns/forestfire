@@ -12,13 +12,14 @@ public class CameraControl : MonoBehaviour {
     public float zoomFactor1 = 0.4f;
     public float zoomFactor2 = 0.45f;
 
-
     public Vector3 cameraOffset;
     Vector3 targetPosition;
     Vector3 prev_targetPosition;
     Vector3 targetOffsetPosition;
 
     Vector3 positionVelocity = new Vector3();
+
+    public float minCameraDistance = -20;
 
     public float positionMaxVelocity;
     public float positionAcceleration;
@@ -44,9 +45,10 @@ public class CameraControl : MonoBehaviour {
     {
         bool allOnScreen = true;
         Vector3 sp = Vector3.zero;
-        foreach (GameObject target in targets)
+        //foreach (GameObject target in targets)
+        for (int i = 0; i < targets.Length; i++)
         {
-            sp = camera.WorldToScreenPoint(target.transform.position);
+            sp = camera.WorldToScreenPoint(targets[i].transform.position);
             sp.x = (sp.x - camera.pixelWidth / 2.0f) / camera.pixelWidth;
             sp.y = (sp.y - camera.pixelHeight / 2.0f) / camera.pixelHeight;
             if (Mathf.Abs(sp.x) > zoomFactor1 || Mathf.Abs(sp.y) > zoomFactor1) {
@@ -54,7 +56,7 @@ public class CameraControl : MonoBehaviour {
                 break;
             }
         }
-
+        Debug.Log(allOnScreen);
         screenPosition = sp;
         if (allOnScreen)
         {
@@ -67,6 +69,11 @@ public class CameraControl : MonoBehaviour {
             if (Mathf.Abs(sp.x) > zoomFactor2 || Mathf.Abs(sp.y) > zoomFactor2)
                 onScreenOffset.z -= zoomSpeed * Time.deltaTime;
         }
+        if (onScreenOffset.z > minCameraDistance)
+            onScreenOffset.z = minCameraDistance;
+
+        onScreenOffset.x = 0;
+        onScreenOffset.y = 0;
     }
 
     void calculateAverageTargetPosition()
