@@ -28,6 +28,7 @@ public class WaterGuyController : MonoBehaviour
     void FixedUpdate()
     {
         var stick = Inputs.GetStick(PlayerIndex);
+        stick = stick.Rotate(180);
 
         _rb.angularVelocity = 0;
 
@@ -42,12 +43,16 @@ public class WaterGuyController : MonoBehaviour
             _rb.MoveRotation(slerped);
         }
 
+        var frictionForce = -_rb.velocity * Friction;
+
         if (Inputs.GetButton(PlayerIndex, Inputs.Button.Fire1)) {
-            _rb.AddForce(-faceVec * WaterForce);
+            var waterForce = -faceVec * WaterForce;
+            _rb.AddForce(waterForce);
             var waterVec = faceVec.Rotate(10*Random.value - 5);
             CreateDroplet(_rb.position + waterVec, waterVec * 5);
-        } else {
-            _rb.AddForce(-_rb.velocity * Friction);
+            frictionForce *= Mathf.Abs(frictionForce.normalized.Cross(waterForce.normalized));
         }
+
+        _rb.AddForce(frictionForce);
     }
 }

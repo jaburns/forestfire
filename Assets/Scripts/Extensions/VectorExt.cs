@@ -28,6 +28,11 @@ static public class Vector2Ext
         return v.x*v1.x + v.y*v1.y;
     }
 
+    static public float Cross(this Vector2 v, Vector2 v1)
+    {
+        return v.x*v1.y - v.y*v1.x;
+    }
+
     static public bool VeryNear(this Vector2 v, Vector2 v1)
     {
         return (v - v1).sqrMagnitude < 1e-9;
