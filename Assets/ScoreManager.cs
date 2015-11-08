@@ -6,6 +6,7 @@ public class ScoreManager : MonoBehaviour {
 
     public GameObject scoreSlider;
     public GameObject timeSlider;
+    public GameObject endScene;
     Scrollbar scoreBar;
     Scrollbar timeBar;
     public int maxScore = 5;
@@ -26,8 +27,19 @@ public class ScoreManager : MonoBehaviour {
         var t = ((float)Time.realtimeSinceStartup - startTime) / roundTime;
         timeBar.size = t;
         if (t >= 1) {
-            SceneSwitcher.WaterWin();
+            endScene.SetActive(true);
+            Invoke("WaterWin", 1.5f);
         }
+    }
+
+    void WaterWin()
+    {
+        SceneSwitcher.WaterWin();
+    }
+
+    void FireWin()
+    {
+        SceneSwitcher.FireWin();
     }
 
     void Message_BaseFound()
@@ -36,7 +48,8 @@ public class ScoreManager : MonoBehaviour {
         scoreBar.size = (float)currentScore / maxScore;
 
         if (currentScore >= maxScore) {
-            SceneSwitcher.FireWin();
+            endScene.SetActive(true);
+            Invoke("FireWin", 1.5f);
         }
     }
 

@@ -37,9 +37,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
---- !u!127 &3
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -68,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -736,6 +734,10 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 154418, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
   m_PrefabInternal: {fileID: 122808012}
+--- !u!4 &1255255595 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 432234, guid: 4a65991b8f1644d3d8b97742164d5f38, type: 2}
+  m_PrefabInternal: {fileID: 1756618303}
 --- !u!1001 &1284617965
 Prefab:
   m_ObjectHideFlags: 0
@@ -822,8 +824,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .839760602, y: .871875048}
   m_AnchorMax: {x: .839760602, y: .956250012}
-  m_AnchoredPosition: {x: -2.56999993, y: -13.8000002}
-  m_SizeDelta: {x: 148.539993, y: 9}
+  m_AnchoredPosition: {x: 7.0880127, y: -34}
+  m_SizeDelta: {x: 148.539993, y: 46.2999992}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1325027256
 MonoBehaviour:
@@ -838,6 +840,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: .926470578, g: .926470578, b: .926470578, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 28
@@ -845,12 +853,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fire Guy
+  m_Text: 'Fire Guy
+
+    Find the Base'
 --- !u!222 &1325027257
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -861,6 +871,110 @@ CanvasRenderer:
 GameObject:
   m_PrefabParentObject: {fileID: 162804, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
   m_PrefabInternal: {fileID: 2086441581}
+--- !u!1001 &1563760195
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1255255595}
+    m_Modifications:
+    - target: {fileID: 495674, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495674, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495674, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 81.6999969
+      objectReference: {fileID: 0}
+    - target: {fileID: 495674, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495674, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495674, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 495674, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 495674, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21288938, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 21217842, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 495674, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 495674, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 405412, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .880267859
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1563760196 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 185228, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+  m_PrefabInternal: {fileID: 1563760195}
+--- !u!1 &1563760197 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 162884, guid: e908433741b5a6b41922af9393dfeaff, type: 2}
+  m_PrefabInternal: {fileID: 1563760195}
+--- !u!95 &1563760198
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1563760196}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6f4faa3facc8744397941798dd28f56, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &1563760199
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1563760197}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ef398be7994fa84989207abdb7416e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1584070568
 Prefab:
   m_ObjectHideFlags: 0
@@ -1116,8 +1230,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .142521143, y: .871875048}
   m_AnchorMax: {x: .142521143, y: .956250012}
-  m_AnchoredPosition: {x: 19.7999992, y: -17.1000004}
-  m_SizeDelta: {x: 152.100006, y: 15.6000004}
+  m_AnchoredPosition: {x: 76.8000031, y: -34}
+  m_SizeDelta: {x: 266.200012, y: 49.4000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2136487611
 MonoBehaviour:
@@ -1132,6 +1246,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: .926470578, g: .926470578, b: .926470578, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 28
@@ -1144,7 +1264,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Water Girl
+  m_Text: 'Water Girl
+
+    Protect the Forest'
 --- !u!222 &2136487612
 CanvasRenderer:
   m_ObjectHideFlags: 0
