@@ -283,9 +283,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RADIUS: 10
-  FORCE: 50
+  FORCE: 100
   TREE_FORCE: 10
-  TREE_RADIUS: 2.5
+  TREE_RADIUS: 5
 --- !u!198 &19806316
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -7487,7 +7487,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: FORCE
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: RADIUS
@@ -7496,6 +7496,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: TREE_FORCE
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: TREE_RADIUS
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
