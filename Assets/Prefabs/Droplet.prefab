@@ -70,8 +70,8 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124384}
-  m_Mass: .100000001
-  m_LinearDrag: 0
+  m_Mass: .00999999978
+  m_LinearDrag: .5
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_IsKinematic: 0
@@ -104,6 +104,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lifetime: 2
+  DropletLarge: {fileID: 2100000, guid: 91f0c931e1aad4c57a7627d21d1b10e8, type: 2}
+  DropletMedium: {fileID: 2100000, guid: b19b6ef1d752146e8aad359a97d6afd6, type: 2}
+  DropletSmall: {fileID: 2100000, guid: 4eb8c998310b26d4f9e36151280abdaf, type: 2}
+  MediumRatio: .600000024
+  SmallRatio: .300000012
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -118,6 +123,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LinearDrag
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: DropletSmall
+      value: 
+      objectReference: {fileID: 2100000, guid: 4eb8c998310b26d4f9e36151280abdaf, type: 2}
+    - target: {fileID: 0}
+      propertyPath: DropletMedium
+      value: 
+      objectReference: {fileID: 2100000, guid: b19b6ef1d752146e8aad359a97d6afd6, type: 2}
+    - target: {fileID: 0}
+      propertyPath: DropletLarge
+      value: 
+      objectReference: {fileID: 2100000, guid: 91f0c931e1aad4c57a7627d21d1b10e8, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: .00999999978
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

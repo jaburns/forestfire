@@ -50,7 +50,7 @@ public class Explosion : MonoBehaviour
 
     IEnumerator waitAndKill()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
 }

@@ -13,6 +13,7 @@ public class TreeController : MonoBehaviour
     public int SplashCount = 5;
     int _splashes = 0;
     Coroutine burningCoroutine = null;
+    public bool uncoverBase = false;
 
     void Awake()
     {
@@ -54,6 +55,13 @@ public class TreeController : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         foreach (Transform child in transform) {
             child.gameObject.SetActive(false);
+        }
+        if (uncoverBase)
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = 0;
+            var gc = GameObject.FindGameObjectWithTag("GameController") as GameObject;
+            gc.SendMessage(Messages.BaseFound);
+
         }
         Destroy(this);
     }

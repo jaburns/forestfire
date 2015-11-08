@@ -56,7 +56,7 @@ public class WaterGuyController : MonoBehaviour
             var waterForce = -faceVec * WaterForce;
             _rb.AddForce(waterForce);
 
-            for (int i = 0; i < 5; ++i) {
+            for (int i = 0; i < 8; ++i) {
                 CreateDroplet(_rb.position + faceVec, faceVec);
             }
 

@@ -15,26 +15,43 @@ public class DropletController : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        float rand = Random.value;
-        if (rand < SmallRatio)
-        {
-            transform.localScale *= Random.Range(0.1f, 0.2f);
-        }
-        else if (rand < MediumRatio)
-        {
-            transform.localScale *= Random.Range(0.3f, 0.6f);
-        }
-        else
-        {
-            transform.localScale *= Random.Range(0.8f, 1.2f);
-        }
-
-        StartCoroutine(dieAfterLifetime());
     }
 
     public void Initialize(Vector2 dir)
     {
-        _rb.velocity = 15 * dir;
+        
+        float rand = Random.value;
+        if (rand < SmallRatio)
+        {
+            dir = dir.Rotate((Random.value - 0.5f) * 90);
+            transform.localScale *= Random.Range(0.1f, 0.2f);
+            transform.localPosition += new Vector3(0, Random.Range(-1.0f, 1));
+            _rb.velocity = 05 * dir * Random.Range(0.95f, 1.05f);
+            _rb.drag = Random.Range(0f, 1.0f);
+            GetComponent<Renderer>().material = DropletSmall;
+
+        }
+        else if (rand < MediumRatio + SmallRatio)
+        {
+            dir = dir.Rotate((Random.value - 0.5f) * 8);
+            transform.localScale *= Random.Range(0.2f, 1.2f);
+            transform.localPosition += new Vector3(0, Random.Range(-1.0f, 1));
+            _rb.velocity = 40 * dir * Random.Range(0.95f, 1.05f);
+            _rb.drag = Random.Range(0.1f, 0.3f);
+            GetComponent<Renderer>().material = DropletMedium;
+        }
+        else
+        {
+            dir = dir.Rotate((Random.value - 0.5f) * 5);
+            transform.localScale *= Random.Range(1.2f, 1.8f);
+            transform.localPosition += new Vector3(0, Random.Range(-1.0f, 1));
+            _rb.velocity = 50 * dir * Random.Range(0.95f, 1.05f);
+            _rb.drag = Random.Range(0f, 0.2f);
+            GetComponent<Renderer>().material = DropletLarge;
+        }
+
+        StartCoroutine(dieAfterLifetime());
+
     }
 
     IEnumerator dieAfterLifetime()
