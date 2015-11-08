@@ -10,32 +10,65 @@ public class TreeController : MonoBehaviour
     SpriteRenderer _spriteRenderer;
     public GameObject FireParticals;
     public float LifeTime = 10f;
-
-    bool Alive = true;
-    
+    public int SplashCount = 5;
+    int _splashes = 0;
+    bool _Alive = true;
+    bool _Burning = false;
+    Coroutine burningCoroutine = null;
         
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-       // if (Random.value < .25f) Message_SetFire();
     }
 
     public void Message_SetFire()
     {
+        if (!_Alive)
+            return;
         _spriteRenderer.sprite = fireSprite;
         FireParticals.SetActive(true);
+        _Burning = true;
+        if(burningCoroutine == null)
+            burningCoroutine = StartCoroutine(Burning());
     }
 
     public void Message_Splash()
     {
-        if (!Alive)
+        if (!_Alive)
         {
             return;
         }
+        else if (_Burning)
+        {
+            _splashes += 1;
+            if (_splashes >= SplashCount)
+            {
+                if(burningCoroutine != null)
+                StopCoroutine(burningCoroutine);
+                _Burning = false;
 
-        _spriteRenderer.sprite = greenSprite;
+            }
+        }
+        else
+        {
+            _spriteRenderer.sprite = greenSprite;
+            _splashes = 0;
+        }
+        
         FireParticals.SetActive(false);
     }
 
-
+    IEnumerator Burning()
+    {
+        yield return new WaitForSeconds(LifeTime);
+        _Alive = false;
+        _spriteRenderer.sprite = deadSprite;
+        burningCoroutine = null;
+        FireParticals.SetActive(false);
+        GetComponent<Collider2D>().enabled = false;
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
 }
