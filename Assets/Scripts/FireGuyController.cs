@@ -5,6 +5,7 @@ public class FireGuyController : MonoBehaviour
     public int PlayerIndex;
     public float SlerpSpeed = 0.2f;
     public float Friction = 1.0f;
+    public float WalkForce = 1.0f;
 
     public GameObject ExplosionPrefab;
 
@@ -19,7 +20,6 @@ public class FireGuyController : MonoBehaviour
     void FixedUpdate()
     {
         var stick = Inputs.GetStick(PlayerIndex);
-        stick = stick.Rotate(180);
 
         _rb.angularVelocity = 0;
 
@@ -28,10 +28,14 @@ public class FireGuyController : MonoBehaviour
             y = Mathf.Sin(_rb.rotation * Mathf.Deg2Rad)
         };
 
+        var walkForce = WalkForce * faceVec;
+
         if (stick.sqrMagnitude > 0.25f) {
             var newDegs = Mathf.Rad2Deg * Mathf.Atan2(stick.y, stick.x);
             var slerped = Quaternion.Slerp(Quaternion.Euler(0, 0, _rb.rotation), Quaternion.Euler(0, 0, newDegs), SlerpSpeed).eulerAngles.z;
             _rb.MoveRotation(slerped);
+        } else {
+            walkForce = Vector2.zero;
         }
 
         if (Inputs.GetButton(PlayerIndex, Inputs.Button.Fire2)) {
@@ -44,13 +48,12 @@ public class FireGuyController : MonoBehaviour
         }
 
         var frictionForce = -_rb.velocity * Friction;
-        _rb.AddForce(frictionForce);
+        _rb.AddForce(frictionForce + walkForce);
     }
 
     void fireBomb(Vector2 faceVec)
     {
-        var go = Instantiate(ExplosionPrefab, transform.position+faceVec.AsVector3(), Quaternion.identity) as GameObject;
-        //_rb.AddForce(-10*faceVec, ForceMode2D.Impulse);
+        Instantiate(ExplosionPrefab, transform.position+faceVec.AsVector3(), Quaternion.identity);
     }
 }
 
