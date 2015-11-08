@@ -13,6 +13,7 @@ public class TreeController : MonoBehaviour
 
     bool Alive = true;
     
+        
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -31,6 +32,7 @@ public class TreeController : MonoBehaviour
         {
             return;
         }
+
         _spriteRenderer.sprite = greenSprite;
         FireParticals.SetActive(false);
     }
