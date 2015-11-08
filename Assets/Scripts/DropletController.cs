@@ -10,6 +10,7 @@ public class DropletController : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        transform.localScale *= Random.Range(0.8f, 1.2f);
         StartCoroutine(dieAfterLifetime());
     }
 

@@ -126,6 +126,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11487274, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
+      propertyPath: FireBombPeriod
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11487274, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
+      propertyPath: WalkForce
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
   m_IsPrefabParent: 0
@@ -291,6 +299,14 @@ Prefab:
     - target: {fileID: 11437930, guid: 4a65991b8f1644d3d8b97742164d5f38, type: 2}
       propertyPath: CameraShakeDegrade
       value: .949999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437930, guid: 4a65991b8f1644d3d8b97742164d5f38, type: 2}
+      propertyPath: zoomSpeed
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437930, guid: 4a65991b8f1644d3d8b97742164d5f38, type: 2}
+      propertyPath: zoomFactor1
+      value: .25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a65991b8f1644d3d8b97742164d5f38, type: 2}

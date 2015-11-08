@@ -52,6 +52,7 @@ public class FireGuyController : MonoBehaviour
 
         var frictionForce = -_rb.velocity * Friction;
         _rb.AddForce(frictionForce + walkForce);
+        Debug.Log("FIRE == " + frictionForce.ToString());
     }
 
     void fireBomb(Vector2 faceVec)

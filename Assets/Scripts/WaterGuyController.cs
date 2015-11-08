@@ -14,6 +14,7 @@ public class WaterGuyController : MonoBehaviour
     public GameObject DropletPrefab;
 
     Rigidbody2D _rb;
+    float _frictionScale = 1f;
 
     void Awake()
     {
@@ -49,21 +50,32 @@ public class WaterGuyController : MonoBehaviour
             walkForce = Vector2.zero;
         }
 
-        var frictionForce = -_rb.velocity * Friction;
+        var frictionForce = Vector2.zero;
 
         if (Inputs.GetButton(PlayerIndex, Inputs.Button.Fire1)) {
             walkForce = Vector2.zero;
             var waterForce = -faceVec * WaterForce;
             _rb.AddForce(waterForce);
-            var waterVec = faceVec.Rotate(dropletCone*(Random.value - .5f));
-            CreateDroplet(_rb.position + waterVec, waterVec * dropletSpeed);
+
+            for (int i = 0; i < 5; ++i) {
+                var waterVec = faceVec.Rotate(dropletCone*(Random.value - .5f));
+                CreateDroplet(_rb.position + waterVec, waterVec * dropletSpeed * Random.Range(0.9f, 1.1f));
+            }
+
+            frictionForce = -_rb.velocity * Friction;
             frictionForce *= Mathf.Abs(frictionForce.normalized.Cross(waterForce.normalized));
+        } else {
+            _rb.velocity *= 0.9f;
         }
 
         _rb.AddForce(frictionForce + walkForce);
 
-        if (_rb.velocity.magnitude > maxVelocity)
+        if (_rb.velocity.magnitude > maxVelocity) {
             _rb.velocity = _rb.velocity.normalized * maxVelocity;
+        }
+    }
 
+    void Message_SetFire() {
+        _frictionScale = 0;
     }
 }
