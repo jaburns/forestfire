@@ -37,6 +37,9 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+--- !u!127 &3
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -65,7 +68,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -206,15 +208,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 472246, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
-      propertyPath: SmallSize
-      value: .25
-      objectReference: {fileID: 0}
-    - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
-      propertyPath: LargeSize
-      value: .300000012
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acd976dc189464e64ba5d812a134af4e, type: 2}

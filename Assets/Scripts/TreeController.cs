@@ -8,7 +8,7 @@ public class TreeController : MonoBehaviour
     SpriteRenderer _spriteRenderer;
     public GameObject FireParticals;
 
-    
+
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();

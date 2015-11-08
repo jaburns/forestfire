@@ -183,7 +183,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .5
+  m_Radius: 1
 --- !u!114 &11407878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4354,7 +4354,6 @@ SpringJoint2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181640}
   m_Enabled: 1
-  serializedVersion: 3
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0}

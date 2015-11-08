@@ -42,8 +42,8 @@ MonoBehaviour:
   TreePrefab: {fileID: 181640, guid: 04d3892666a974ab3a36364f7283a6a9, type: 2}
   SpawnRange: {x: 100, y: 100}
   SpawnCount: 800
-  SmallSize: 1
-  LargeSize: 2
+  SmallSize: .25
+  LargeSize: .300000012
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
