@@ -14,6 +14,11 @@ public class DropletController : MonoBehaviour
         StartCoroutine(dieAfterLifetime());
     }
 
+    public void Initialize(Vector2 dir)
+    {
+        _rb.velocity = 15 * dir;
+    }
+
     IEnumerator dieAfterLifetime()
     {
         yield return new WaitForSeconds(Lifetime);
@@ -23,11 +28,6 @@ public class DropletController : MonoBehaviour
     void die()
     {
         Destroy(gameObject);
-    }
-
-    public void Initialize(Vector2 vel)
-    {
-        _rb.velocity = vel;
     }
 
     void OnCollisionEnter2D(Collision2D other)
