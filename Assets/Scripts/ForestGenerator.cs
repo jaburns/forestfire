@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
 public class ForestGenerator : MonoBehaviour
 {
@@ -7,23 +6,24 @@ public class ForestGenerator : MonoBehaviour
     public Vector2 SpawnRange;
     public int SpawnCount;
 
-    List<TreeController> _trees;
-
     void Awake()
     {
-        _trees = new List<TreeController>();
-
         for (int i = 0; i < SpawnCount; ++i) {
-            _trees.Add(spawnTree(new Vector2 {
+            spawnTree(new Vector2 {
                 x = (.5f - Random.value) * SpawnRange.x,
                 y = (.5f - Random.value) * SpawnRange.y
-            }));
+            });
         }
     }
 
     TreeController spawnTree(Vector2 pos)
     {
         var treeObj = Instantiate(TreePrefab, pos.AsVector3(), Quaternion.identity) as GameObject;
+        treeObj.transform.localScale *= (1 + Random.value);
+
+        var treeSpring = treeObj.GetComponent<SpringJoint2D>();
+        treeSpring.connectedAnchor = treeObj.transform.position.AsVector2();
+
         return treeObj.GetComponent<TreeController>();
     }
 

@@ -34,7 +34,7 @@ public class Inputs : MonoBehaviour
         switch(button) {
             case Inputs.Button.Fire1: return Input.GetButton("Fire1" + PLAYER_SUFFIX[player]);
             case Inputs.Button.Fire2: return Input.GetButton("Fire2" + PLAYER_SUFFIX[player]);
-            case Inputs.Button.Start: return Input.GetButton("Start" + PLAYER_SUFFIX[player]);
+            case Inputs.Button.Start: return Input.GetButton("Start" + PLAYER_SUFFIX[player]);;
         }
         return false;
     }

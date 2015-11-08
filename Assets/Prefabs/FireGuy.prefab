@@ -11,7 +11,8 @@ GameObject:
   - 33: {fileID: 3327998}
   - 23: {fileID: 2364466}
   - 58: {fileID: 5859172}
-  - 114: {fileID: 11495628}
+  - 50: {fileID: 5048324}
+  - 114: {fileID: 11487274}
   m_Layer: 0
   m_Name: FireGuy
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.01999998, y: 1.82000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,7 +42,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: b19b6ef1d752146e8aad359a97d6afd6, type: 2}
+  - {fileID: 2100000, guid: c437bdd28fb487a42967e1f3fecb6ea2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -62,6 +63,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154418}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!50 &5048324
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154418}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &5859172
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -75,7 +92,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .5
---- !u!114 &11495628
+--- !u!114 &11487274
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -83,10 +100,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 154418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c5129c19dd94a128018211938886cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 938c4ed639bfd4754a595279af63960c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: P2
+  PlayerIndex: 1
+  speed: .100000001
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
