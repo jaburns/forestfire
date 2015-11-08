@@ -5,7 +5,7 @@ static public class Sounds
 {
     readonly static Dictionary<string, float> VOLUMES = new Dictionary<string, float> {
         { "explosion", 1 }
-      , { "base", 1 }
+      , { "base", 1.5f }
     };
 
     static AudioSource _sounder;
