@@ -13,6 +13,7 @@ public class WaterGuyController : MonoBehaviour
 
     public GameObject DropletPrefab;
 
+
     Rigidbody2D _rb;
     float _frictionScale = 1f;
 

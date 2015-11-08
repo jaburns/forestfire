@@ -42,7 +42,7 @@ public class FireGuyController : MonoBehaviour
 
         if (_nextBombCountdown > 0) _nextBombCountdown--;
 
-        if (Inputs.GetButton(PlayerIndex, Inputs.Button.Fire2)) {
+        if (Inputs.GetButton(PlayerIndex, Inputs.Button.Fire1)) {
             walkForce = Vector2.zero;
             if (_nextBombCountdown == 0) {
                 _nextBombCountdown = FireBombPeriod;
@@ -52,7 +52,6 @@ public class FireGuyController : MonoBehaviour
 
         var frictionForce = -_rb.velocity * Friction;
         _rb.AddForce(frictionForce + walkForce);
-        Debug.Log("FIRE == " + frictionForce.ToString());
     }
 
     void fireBomb(Vector2 faceVec)
