@@ -28,10 +28,34 @@ public class CameraControl : MonoBehaviour {
     public Vector3 onScreenOffset = Vector3.zero;
 
     Vector3 position;
+    Vector3 cameraShakePosition = Vector3.zero;
+
+    public float CameraShakeMagnitube = 2;
+    public float CameraShakeDegrade = 0.99f;
+    public float startingFreq = 3;
+    float yphase = 0;
+    float currentFreq = 0;
+    float cameraShakeMagnitude = 0;
 
     // Use this for initialization
     void Start () {
         camera = cameraObject.GetComponent<Camera>();
+        
+    }
+
+    void Message_StartCameraShake()
+    {
+        currentFreq = startingFreq;
+        yphase = UnityEngine.Random.value * 2 * Mathf.PI;
+        cameraShakeMagnitude = 0;
+    }
+
+    void CameraShake()
+    {
+        cameraShakeMagnitude = Mathf.Lerp(cameraShakeMagnitude, CameraShakeMagnitube, Time.deltaTime);
+        cameraShakePosition.x = cameraShakeMagnitude * Mathf.Sin(Time.deltaTime * currentFreq);
+        cameraShakePosition.y = cameraShakeMagnitude * Mathf.Cos(Time.deltaTime * currentFreq + yphase);
+        currentFreq = currentFreq * CameraShakeDegrade;
     }
 
     // Update is called once per frame
@@ -39,7 +63,8 @@ public class CameraControl : MonoBehaviour {
         calculateAverageTargetPosition();
         keepTargetsOnScreen();
         positionSmoothDamp();
-        camera.transform.position = position + onScreenOffset;
+        CameraShake();
+        camera.transform.position = position + onScreenOffset + cameraShakePosition;
     }
     void keepTargetsOnScreen()
     {

@@ -7,6 +7,8 @@ public class Explosion : MonoBehaviour
     const float FORCE  = 10f;
     const float TREE_FORCE = 0.5f;
 
+    public GameObject camera;
+
     void Awake()
     {
         StartCoroutine(waitAndKill());
@@ -14,6 +16,8 @@ public class Explosion : MonoBehaviour
 
     void Start()
     {
+
+        Camera.main.gameObject.SendMessage(Messages.StartCameraShake);
         var castHits = Physics2D.CircleCastAll(transform.position.AsVector2(), RADIUS, Vector2.zero);
         foreach (var hit in castHits) {
             if (hit.rigidbody) {
