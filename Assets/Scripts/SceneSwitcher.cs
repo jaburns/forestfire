@@ -4,7 +4,7 @@ static public class SceneSwitcher
 {
     static public void MainMenu()
     {
-        Application.LoadLevel("MainMenu");
+        Application.LoadLevel("title");
     }
 
     static public void Gameplay()
