@@ -40,8 +40,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreSlider: {fileID: 0}
-  maxScore: 5
-  roundTime: 120
+  timeSlider: {fileID: 0}
+  maxScore: 4
+  roundTime: 195
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

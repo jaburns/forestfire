@@ -41,6 +41,7 @@ public class Explosion : MonoBehaviour
         var force = forceMag * dir;
         rb.gameObject.SendMessage(Messages.SetFire, SendMessageOptions.DontRequireReceiver);
         rb.AddForce(force, ForceMode2D.Impulse);
+        Sounds.Play("explosion");
     }
 
     void Update()
