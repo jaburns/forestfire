@@ -6,6 +6,9 @@ public class WaterGuyController : MonoBehaviour
     public float speed = 0.1f;
     public float SlerpSpeed = 0.2f;
     public float WaterForce = 1.0f;
+    public float Friction = 1.0f;
+
+    public GameObject DropletPrefab;
 
     Rigidbody2D _rb;
 
@@ -31,7 +34,9 @@ public class WaterGuyController : MonoBehaviour
                 x = Mathf.Cos(_rb.rotation * Mathf.Deg2Rad),
                 y = Mathf.Sin(_rb.rotation * Mathf.Deg2Rad)
             };
-            _rb.AddForce(WaterForce * -faceVec);
+            _rb.AddForce(-faceVec * WaterForce);
+        } else {
+            _rb.AddForce(-_rb.velocity * Friction);
         }
     }
 }

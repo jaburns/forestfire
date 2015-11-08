@@ -167,7 +167,8 @@ MonoBehaviour:
   PlayerIndex: 0
   speed: .100000001
   SlerpSpeed: .200000003
-  WaterForce: 1
+  WaterForce: 10
+  Friction: 5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

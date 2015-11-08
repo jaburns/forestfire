@@ -37,6 +37,9 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+--- !u!127 &3
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -65,7 +68,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -113,8 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TreePrefab: {fileID: 181640, guid: 04d3892666a974ab3a36364f7283a6a9, type: 2}
-  SpawnRange: {x: 50, y: 50}
-  SpawnCount: 200
+  SpawnRange: {x: 100, y: 100}
+  SpawnCount: 800
 --- !u!4 &157263332
 Transform:
   m_ObjectHideFlags: 0
@@ -249,7 +251,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -310,30 +311,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11458866, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
-      propertyPath: Vertical
-      value: HorizontalP1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458866, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
-      propertyPath: Horizontal
-      value: HorizontalP2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458866, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
-      propertyPath: StartButton
-      value: Start
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458866, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
-      propertyPath: Fire1
-      value: FireP1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458866, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
-      propertyPath: Fire2
-      value: FireP2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11458866, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
-      propertyPath: Player
-      value: P2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
   m_IsPrefabParent: 0
@@ -368,10 +345,10 @@ MonoBehaviour:
   targets:
   - {fileID: 1326906932}
   - {fileID: 349081729}
-  zoomSpeed: 20
-  zoomInFactor: .200000003
-  zoomFactor1: .300000012
-  zoomFactor2: .349999994
+  zoomSpeed: 50
+  zoomInFactor: 1
+  zoomFactor1: .200000003
+  zoomFactor2: .300000012
   cameraOffset: {x: 0, y: 0, z: 0}
   positionMaxVelocity: 1
   positionAcceleration: 1

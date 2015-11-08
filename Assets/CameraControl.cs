@@ -32,12 +32,12 @@ public class CameraControl : MonoBehaviour {
     void Start () {
         camera = cameraObject.GetComponent<Camera>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         calculateAverageTargetPosition();
-        positionSmoothDamp();
         keepTargetsOnScreen();
+        positionSmoothDamp();
         camera.transform.position = position + onScreenOffset;
     }
     void keepTargetsOnScreen()
@@ -49,12 +49,14 @@ public class CameraControl : MonoBehaviour {
             sp = camera.WorldToScreenPoint(target.transform.position);
             sp.x = (sp.x - camera.pixelWidth / 2.0f) / camera.pixelWidth;
             sp.y = (sp.y - camera.pixelHeight / 2.0f) / camera.pixelHeight;
-            if (Mathf.Abs(sp.x) > zoomFactor1 || Mathf.Abs(sp.y) > zoomFactor1)
+            if (Mathf.Abs(sp.x) > zoomFactor1 || Mathf.Abs(sp.y) > zoomFactor1) {
                 allOnScreen = false;
+                break;
+            }
         }
 
         screenPosition = sp;
-        if (allOnScreen == true)
+        if (allOnScreen)
         {
             onScreenOffset.z += zoomSpeed * Time.deltaTime * zoomInFactor;
             if (onScreenOffset.z > 0)
