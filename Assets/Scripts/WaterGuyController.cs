@@ -60,9 +60,12 @@ public class WaterGuyController : MonoBehaviour
                 CreateDroplet(_rb.position + faceVec, faceVec);
             }
 
+            Sounds.SetWaterLoop(true);
+
             frictionForce = -_rb.velocity * Friction;
             frictionForce *= Mathf.Abs(frictionForce.normalized.Cross(waterForce.normalized));
         } else {
+            Sounds.SetWaterLoop(false);
             _rb.velocity *= 0.9f;
         }
 
