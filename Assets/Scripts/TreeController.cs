@@ -6,6 +6,7 @@ public class TreeController : MonoBehaviour
     public Sprite fireSprite;
     public Sprite greenSprite;
     public Sprite deadSprite;
+    public GameObject happyExplosion;
 
     SpriteRenderer _spriteRenderer;
     public GameObject FireParticals;
@@ -61,6 +62,7 @@ public class TreeController : MonoBehaviour
             GetComponent<SpriteRenderer>().sortingOrder = 0;
             var gc = GameObject.FindGameObjectWithTag("GameController") as GameObject;
             gc.SendMessage(Messages.BaseFound);
+            Instantiate(happyExplosion, gameObject.transform.position, transform.rotation);
 
         }
         Destroy(this);
