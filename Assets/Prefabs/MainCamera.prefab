@@ -99,7 +99,7 @@ MonoBehaviour:
   zoomFactor1: .150000006
   zoomFactor2: .300000012
   cameraOffset: {x: 0, y: 0, z: 0}
-  minCameraDistance: -500
+  minCameraDistance: -50
   positionMaxVelocity: 5
   positionAcceleration: .100000001
   screenPosition: {x: -.29984495, y: .0414988883, z: 236.493469}
