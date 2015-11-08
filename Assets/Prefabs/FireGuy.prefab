@@ -13,7 +13,7 @@ GameObject:
   - 58: {fileID: 5859172}
   - 50: {fileID: 5048324}
   - 114: {fileID: 11487274}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FireGuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 154418}
