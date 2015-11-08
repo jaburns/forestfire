@@ -23,6 +23,7 @@ public class ForestGenerator : MonoBehaviour
         var treeObj = Instantiate(TreePrefab, pos.AsVector3(), Quaternion.identity) as GameObject;
         treeObj.transform.localScale *= Random.value * (LargeSize - SmallSize) + SmallSize;
         treeObj.transform.parent = transform;
+   //     treeObj.transform.rotation = Quaternion.EulerAngles(0, 0, Random.value * 2000);
 
         var treeSpring = treeObj.GetComponent<SpringJoint2D>();
         treeSpring.connectedAnchor = treeObj.transform.position.AsVector2();

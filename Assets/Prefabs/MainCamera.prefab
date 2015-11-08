@@ -60,6 +60,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -99,7 +100,7 @@ MonoBehaviour:
   zoomFactor1: .150000006
   zoomFactor2: .300000012
   cameraOffset: {x: 0, y: 0, z: 0}
-  minCameraDistance: -50
+  minCameraDistance: -200
   positionMaxVelocity: 5
   positionAcceleration: .100000001
   screenPosition: {x: -.29984495, y: .0414988883, z: 236.493469}
