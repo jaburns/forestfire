@@ -66,7 +66,7 @@ public class TreeController : MonoBehaviour
             var gc = GameObject.FindGameObjectWithTag("GameController") as GameObject;
             gc.SendMessage(Messages.BaseFound);
             Instantiate(happyExplosion, gameObject.transform.position, transform.rotation);
-
+            Sounds.Play("base");
         }
         Destroy(this);
     }

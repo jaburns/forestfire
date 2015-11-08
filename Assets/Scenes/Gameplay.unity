@@ -568,7 +568,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22404928, guid: 20627ef992d30ca4c9105a5ddb109030, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22466200, guid: 20627ef992d30ca4c9105a5ddb109030, type: 2}
       propertyPath: m_AnchorMin.x
@@ -580,7 +580,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22466200, guid: 20627ef992d30ca4c9105a5ddb109030, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22467518, guid: 20627ef992d30ca4c9105a5ddb109030, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -656,11 +656,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22404928, guid: 20627ef992d30ca4c9105a5ddb109030, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22404928, guid: 20627ef992d30ca4c9105a5ddb109030, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11460724, guid: 20627ef992d30ca4c9105a5ddb109030, type: 2}
       propertyPath: m_Color.a
@@ -1082,14 +1082,6 @@ Prefab:
       propertyPath: timeSlider
       value: 
       objectReference: {fileID: 659670179}
-    - target: {fileID: 11449636, guid: c0a0d232b45a27545963570fafa098df, type: 2}
-      propertyPath: roundTime
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 11449636, guid: c0a0d232b45a27545963570fafa098df, type: 2}
-      propertyPath: maxScore
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0a0d232b45a27545963570fafa098df, type: 2}
   m_IsPrefabParent: 0
