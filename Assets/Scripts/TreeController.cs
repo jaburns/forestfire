@@ -12,10 +12,8 @@ public class TreeController : MonoBehaviour
     public float LifeTime = 10f;
     public int SplashCount = 5;
     int _splashes = 0;
-    bool _Alive = true;
-    bool _Burning = false;
     Coroutine burningCoroutine = null;
-        
+
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -23,52 +21,40 @@ public class TreeController : MonoBehaviour
 
     public void Message_SetFire()
     {
-        if (!_Alive)
+        if (burningCoroutine != null) {
             return;
+        }
+
         _spriteRenderer.sprite = fireSprite;
         FireParticals.SetActive(true);
-        _Burning = true;
-        if(burningCoroutine == null)
-            burningCoroutine = StartCoroutine(Burning());
+        burningCoroutine = StartCoroutine(Burning());
     }
 
     public void Message_Splash()
     {
-        if (!_Alive)
-        {
-            return;
-        }
-        else if (_Burning)
-        {
+        if (burningCoroutine != null) {
             _splashes += 1;
-            if (_splashes >= SplashCount)
-            {
-                if(burningCoroutine != null)
+            if (_splashes >= SplashCount) {
                 StopCoroutine(burningCoroutine);
-                _Burning = false;
-
+                burningCoroutine = null;
+                FireParticals.SetActive(false);
             }
-        }
-        else
-        {
+        } else {
             _spriteRenderer.sprite = greenSprite;
             _splashes = 0;
         }
-        
-        FireParticals.SetActive(false);
     }
 
     IEnumerator Burning()
     {
         yield return new WaitForSeconds(LifeTime);
-        _Alive = false;
         _spriteRenderer.sprite = deadSprite;
         burningCoroutine = null;
         FireParticals.SetActive(false);
         GetComponent<Collider2D>().enabled = false;
-        foreach (Transform child in transform)
-        {
+        foreach (Transform child in transform) {
             child.gameObject.SetActive(false);
         }
+        Destroy(this);
     }
 }

@@ -7,9 +7,7 @@ public class WaterGuyController : MonoBehaviour
     public float WaterForce = 1.0f;
     public float Friction = 1.0f;
     public float WalkForce = 1.0f;
-    public float dropletSpeed = 15f;
     public float maxVelocity = 15;
-    public float dropletCone = 30;
 
     public GameObject DropletPrefab;
 
@@ -22,11 +20,11 @@ public class WaterGuyController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    DropletController CreateDroplet(Vector2 pos, Vector2 vel)
+    DropletController CreateDroplet(Vector2 pos, Vector2 dir)
     {
         var go = Instantiate(DropletPrefab, pos.AsVector3(), Quaternion.identity) as GameObject;
         var droplet = go.GetComponent<DropletController>();
-        droplet.Initialize(vel);
+        droplet.Initialize(dir);
         return droplet;
     }
 
@@ -59,8 +57,7 @@ public class WaterGuyController : MonoBehaviour
             _rb.AddForce(waterForce);
 
             for (int i = 0; i < 5; ++i) {
-                var waterVec = faceVec.Rotate(dropletCone*(Random.value - .5f));
-                CreateDroplet(_rb.position + waterVec, waterVec * dropletSpeed * Random.Range(0.9f, 1.1f));
+                CreateDroplet(_rb.position + faceVec, faceVec);
             }
 
             frictionForce = -_rb.velocity * Friction;
