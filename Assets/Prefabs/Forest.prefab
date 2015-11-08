@@ -39,11 +39,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10675594ade6148419f023bea66b7cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TreePrefab: {fileID: 181640, guid: 04d3892666a974ab3a36364f7283a6a9, type: 2}
-  SpawnRange: {x: 100, y: 100}
-  SpawnCount: 400
-  SmallSize: .5
-  LargeSize: .800000012
+  TreePrefab: {fileID: 155500, guid: 3bb1b22db5b1ac54ab509e88e6601846, type: 2}
+  SpawnRange: {x: 150, y: 150}
+  SpawnCount: 10
+  SmallSize: 1
+  LargeSize: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
