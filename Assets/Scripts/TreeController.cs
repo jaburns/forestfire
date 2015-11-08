@@ -30,6 +30,7 @@ public class TreeController : MonoBehaviour
         _spriteRenderer.sprite = fireSprite;
         FireParticals.SetActive(true);
         burningCoroutine = StartCoroutine(Burning());
+        Camera.main.GetComponent<CameraControl>().targets.Add(gameObject);
     }
 
     public void Message_Splash()
@@ -40,6 +41,7 @@ public class TreeController : MonoBehaviour
                 StopCoroutine(burningCoroutine);
                 burningCoroutine = null;
                 FireParticals.SetActive(false);
+                Camera.main.GetComponent<CameraControl>().targets.Remove(gameObject);
             }
         } else {
             _spriteRenderer.sprite = greenSprite;
@@ -53,6 +55,7 @@ public class TreeController : MonoBehaviour
         _spriteRenderer.sprite = deadSprite;
         burningCoroutine = null;
         FireParticals.SetActive(false);
+        Camera.main.GetComponent<CameraControl>().targets.Remove(gameObject);
         GetComponent<Collider2D>().enabled = false;
         foreach (Transform child in transform) {
             child.gameObject.SetActive(false);

@@ -49,7 +49,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: .300000012
-  far clip plane: 1000
+  far clip plane: 10000
   field of view: 9.19999981
   orthographic: 0
   orthographic size: 5
@@ -60,7 +60,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -95,16 +94,19 @@ MonoBehaviour:
   targets:
   - {fileID: 0}
   - {fileID: 0}
-  zoomSpeed: 50
-  zoomInFactor: .5
-  zoomFactor1: .150000006
-  zoomFactor2: .300000012
+  zoomSpeed: 160
+  zoomInFactor: .25
+  zoomFactor1: .400000006
+  zoomFactor2: .449999988
   cameraOffset: {x: 0, y: 0, z: 0}
   minCameraDistance: -200
   positionMaxVelocity: 5
   positionAcceleration: .100000001
   screenPosition: {x: -.29984495, y: .0414988883, z: 236.493469}
   onScreenOffset: {x: 0, y: 0, z: -236.493469}
+  CameraShakeMagnitube: 3
+  CameraShakeDegrade: .949999988
+  startingFreq: 24
 --- !u!124 &12425646
 Behaviour:
   m_ObjectHideFlags: 1

@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CameraControl : MonoBehaviour {
 
     public GameObject cameraObject;
     Camera camera;
-    public GameObject[] targets;
+    public List<GameObject> targets;
     public float zoomSpeed = 5;
     public float zoomInFactor = 0.2f;
     public float zoomFactor1 = 0.4f;
@@ -68,7 +69,7 @@ public class CameraControl : MonoBehaviour {
         bool allOnScreen = true;
         Vector3 sp = Vector3.zero;
         //foreach (GameObject target in targets)
-        for (int i = 0; i < targets.Length; i++)
+        for (int i = 0; i < targets.Count; i++)
         {
             sp = camera.WorldToScreenPoint(targets[i].transform.position);
             sp.x = (sp.x - camera.pixelWidth / 2.0f) / camera.pixelWidth;
@@ -106,7 +107,7 @@ public class CameraControl : MonoBehaviour {
         }
 
         prev_targetPosition = targetPosition;
-        targetPosition = average / targets.Length;
+        targetPosition = average / targets.Count;
         targetOffsetPosition = targetPosition + cameraOffset;
     }
 
