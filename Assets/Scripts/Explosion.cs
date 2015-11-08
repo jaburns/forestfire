@@ -3,11 +3,10 @@ using System.Collections;
 
 public class Explosion : MonoBehaviour
 {
-    const float RADIUS = 2.5f;
-    const float FORCE  = 10f;
-    const float TREE_FORCE = 0.5f;
-
-    public GameObject camera;
+    public float RADIUS = 5f;
+    public float FORCE  = 10f;
+    public float TREE_FORCE = 0.5f;
+    public float TREE_RADIUS = 2.5f;
 
     void Awake()
     {
@@ -16,26 +15,31 @@ public class Explosion : MonoBehaviour
 
     void Start()
     {
-
         Camera.main.gameObject.SendMessage(Messages.StartCameraShake);
+
         var castHits = Physics2D.CircleCastAll(transform.position.AsVector2(), RADIUS, Vector2.zero);
         foreach (var hit in castHits) {
-            if (hit.rigidbody) {
-                blowAway(hit.rigidbody, hit.rigidbody.transform.position - transform.position);
+            if (hit.rigidbody && hit.rigidbody.gameObject.GetComponent<TreeController>() == null) {
+                blowAway(hit.rigidbody, hit.rigidbody.transform.position - transform.position, FORCE);
             }
         }
-    }
 
-    void blowAway(Rigidbody2D rb, Vector2 dir)
-    {
-        var force = FORCE * dir;
-        var tree = rb.GetComponent<TreeController>();
-
-        if (tree) {
-            force = TREE_FORCE * dir;
-            tree.SendMessage(Messages.SetFire, SendMessageOptions.DontRequireReceiver);
+        castHits = Physics2D.CircleCastAll(transform.position.AsVector2(), TREE_RADIUS, Vector2.zero);
+        foreach (var hit in castHits) {
+            if (hit.rigidbody && hit.rigidbody.gameObject.GetComponent<TreeController>()) {
+                blowAway(hit.rigidbody, hit.rigidbody.transform.position - transform.position, TREE_FORCE);
+            }
         }
 
+        Debug.DrawLine(transform.position  + Vector3.right * RADIUS, transform.position  - Vector3.right * RADIUS, Color.red, 1);
+        Debug.DrawLine(transform.position  + Vector3.up * RADIUS, transform.position  - Vector3.up * RADIUS, Color.red, 1);
+    }
+
+    void blowAway(Rigidbody2D rb, Vector2 dir, float forceMag)
+    {
+        dir = dir.normalized;
+        var force = forceMag * dir;
+        rb.gameObject.SendMessage(Messages.SetFire, SendMessageOptions.DontRequireReceiver);
         rb.AddForce(force, ForceMode2D.Impulse);
     }
 

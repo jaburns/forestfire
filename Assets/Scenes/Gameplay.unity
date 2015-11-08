@@ -126,14 +126,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11487274, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
-      propertyPath: FireBombPeriod
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487274, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
-      propertyPath: Friction
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
   m_IsPrefabParent: 0
