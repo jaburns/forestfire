@@ -3,7 +3,6 @@
 public class WaterGuyController : MonoBehaviour
 {
     public int PlayerIndex;
-    public float speed = 0.1f;
     public float SlerpSpeed = 0.2f;
     public float WaterForce = 1.0f;
     public float Friction = 1.0f;

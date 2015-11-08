@@ -13,7 +13,7 @@ public class TreeController : MonoBehaviour
         _renderer = GetComponent<Renderer>();
         _originalMaterial = _renderer.material;
 
-        if (Random.value < .5f) Message_SetFire();
+        //if (Random.value < .5f) Message_SetFire();
     }
 
     public void Message_SetFire()
