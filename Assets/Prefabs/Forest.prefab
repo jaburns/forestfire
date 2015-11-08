@@ -41,7 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TreePrefab: {fileID: 181640, guid: 04d3892666a974ab3a36364f7283a6a9, type: 2}
   SpawnRange: {x: 100, y: 100}
-  SpawnCount: 600
+  SpawnCount: 400
   SmallSize: .5
   LargeSize: .800000012
 --- !u!1001 &100100000
