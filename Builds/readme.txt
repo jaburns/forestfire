@@ -12,6 +12,8 @@
                 then Fire Guy wins.  If Water Girl prevents this for long enough
                 that her timer elapses, then Water Girl wins.
 
+		Keyboard Alternatives. P1: WASD E to fire, P2: IJKL O to fire
+
         Themes: fire: The forest is being set on fire.
                 forest: The game takes place in a forest.
                 mystery: Neither player knows where the hide-outs are.

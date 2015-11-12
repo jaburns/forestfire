@@ -1224,6 +1224,10 @@ Prefab:
       propertyPath: endScene
       value: 
       objectReference: {fileID: 434900337}
+    - target: {fileID: 11449636, guid: c0a0d232b45a27545963570fafa098df, type: 2}
+      propertyPath: maxScore
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0a0d232b45a27545963570fafa098df, type: 2}
   m_IsPrefabParent: 0
