@@ -41,7 +41,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreSlider: {fileID: 0}
   timeSlider: {fileID: 0}
-  maxScore: 4
+  endScene: {fileID: 0}
+  maxScore: 10
   roundTime: 195
 --- !u!1001 &100100000
 Prefab:
