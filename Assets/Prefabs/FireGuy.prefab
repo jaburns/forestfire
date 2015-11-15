@@ -102,8 +102,8 @@ MonoBehaviour:
   PlayerIndex: 1
   SlerpSpeed: .200000003
   Friction: 5
-  WalkForce: 30
-  FireBombPeriod: 30
+  WalkForce: 80
+  FireBombPeriod: 200
   ExplosionPrefab: {fileID: 141428, guid: 38971d02fdcf74f198a550d5b8792609, type: 2}
 --- !u!212 &21225590
 SpriteRenderer:
