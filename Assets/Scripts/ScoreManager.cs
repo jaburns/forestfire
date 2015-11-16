@@ -5,14 +5,13 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour {
 
     public Image[] baseIcons;
-    public GameObject timeSlider;
     public GameObject endScene;
-    Scrollbar scoreBar;
-    Scrollbar timeBar;
+    public Text timerText;
     public int maxScore = 5;
     public float roundTime = 120;
     float startTime;
     public Color fadedBaseColor = new Color(1, 1, 1, .3f);
+    public Color foundBaseColor = Color.green;
 
     int currentScore = 0;
 
@@ -22,15 +21,17 @@ public class ScoreManager : MonoBehaviour {
         {
             i.color = fadedBaseColor;
         }
-        timeBar = timeSlider.GetComponent<Scrollbar>();
+     
         startTime = (float)Time.realtimeSinceStartup;
     }
 
     // Update is called once per frame
     void Update () {
-        var t = ((float)Time.realtimeSinceStartup - startTime) / roundTime;
-        timeBar.size = t;
-        if (t >= 1) {
+        float t = roundTime - ((float)Time.realtimeSinceStartup - startTime);
+
+        timerText.text = t.ToString("0");
+        
+        if (t <= 0) {
             endScene.SetActive(true);
             Invoke("WaterWin", 1.5f);
         }
@@ -48,11 +49,9 @@ public class ScoreManager : MonoBehaviour {
 
     void Message_BaseFound()
     {
-        baseIcons[currentScore].color = Color.white;
+        baseIcons[currentScore].color = foundBaseColor;
         currentScore += 1;
-        scoreBar.size = (float)currentScore / maxScore;
         
-
         if (currentScore >= maxScore) {
             endScene.SetActive(true);
             Invoke("FireWin", 1.5f);
