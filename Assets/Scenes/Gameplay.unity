@@ -253,6 +253,14 @@ Prefab:
       propertyPath: FireBombPeriod
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 455426, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .479999989
+      objectReference: {fileID: 0}
+    - target: {fileID: 455426, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.0399999991
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
   m_IsPrefabParent: 0
@@ -1681,6 +1689,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 1338479288}
   - 114: {fileID: 1338479289}
+  - 114: {fileID: 1338479290}
   m_Layer: 5
   m_Name: Conversation
   m_TagString: Untagged
@@ -1720,7 +1729,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7af18061ff5fd5245955d1ed0c85ae09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeout: 5
+  timeout: 8
+--- !u!114 &1338479290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1338479287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1695305b70d66f46a84785ece419a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  watergirlPart:
+  - I'll never let you uncover the mystery of forest.
+  - Well you make a terrible super villain anyways.
+  - Did you just call my mother a hampster?
+  - I'm gunna make it rain!
+  - Shut up, Liam Neeson!
+  fireguyPart:
+  - What are you hiding here water girl?
+  - I would reveal my plans, but this isn't that kind of game.
+  - "\u0412\u0430\u0448\u0430 \u043C\u0430\u043C\u0430 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F
+    \u0445\u043E\u043C\u044F\u043A"
+  - I don't give a damn, let the secret bases burn
+  - I will look for you, I will find you, and I will kill you.
+  watergirlText: {fileID: 2141432229}
+  fireguyText: {fileID: 645976161}
 --- !u!1 &1348414396
 GameObject:
   m_ObjectHideFlags: 0
