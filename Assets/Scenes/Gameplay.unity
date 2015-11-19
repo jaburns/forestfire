@@ -1532,6 +1532,14 @@ Prefab:
       propertyPath: KeepOutWindow.y
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
+      propertyPath: LargeSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
+      propertyPath: SmallSize
+      value: .5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
   m_IsPrefabParent: 0
@@ -2013,6 +2021,14 @@ Prefab:
     - target: {fileID: 162804, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
       propertyPath: m_Name
       value: WaterGirl
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458866, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
+      propertyPath: WaterForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458866, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
+      propertyPath: WalkForce
+      value: -12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}

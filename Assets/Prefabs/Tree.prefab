@@ -284,9 +284,11 @@ MonoBehaviour:
   fireSprite: {fileID: 21300000, guid: 8c4f92f4ea2cbaf429f4f32222f45bf0, type: 3}
   greenSprite: {fileID: 21300000, guid: 59fe8f6967e4f464884917ec2bd144d3, type: 3}
   deadSprite: {fileID: 21300000, guid: ca03a308c7f65d04cb2888e1894d03e0, type: 3}
+  happyExplosion: {fileID: 0}
   FireParticals: {fileID: 138232}
   LifeTime: 10
   SplashCount: 5
+  uncoverBase: 0
 --- !u!114 &11444094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4423,7 +4425,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bd46341a70ba9da48bbdd54348f2fadc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: .397000015}
 --- !u!212 &21212816
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -4449,7 +4451,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: 59fe8f6967e4f464884917ec2bd144d3, type: 3}
-  m_Color: {r: .867647052, g: .867647052, b: .867647052, a: 1}
+  m_Color: {r: .564705908, g: .564705908, b: .564705908, a: 1}
 --- !u!212 &21233078
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -4475,7 +4477,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 7d3e2302ebcf8024eac9464b9bec9ee9, type: 3}
-  m_Color: {r: .875, g: .875, b: .875, a: 1}
+  m_Color: {r: .698039234, g: .698039234, b: .698039234, a: 1}
 --- !u!212 &21273712
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -4555,6 +4557,22 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 8c4f92f4ea2cbaf429f4f32222f45bf0,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Color.r
+      value: .698039234
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.g
+      value: .698039234
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.b
+      value: .698039234
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.a
+      value: .397000015
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 181640}

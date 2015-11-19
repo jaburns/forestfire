@@ -11,6 +11,7 @@ public class WaterGuyController : MonoBehaviour
 
     public GameObject DropletPrefab;
 
+    int direction = -1;
 
     Rigidbody2D _rb;
     float _frictionScale = 1f;
@@ -30,7 +31,7 @@ public class WaterGuyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        var stick = Inputs.GetStick(PlayerIndex);
+        var stick = Inputs.GetStick(PlayerIndex) * direction;
 
         _rb.angularVelocity = 0;
 
@@ -52,6 +53,7 @@ public class WaterGuyController : MonoBehaviour
         var frictionForce = Vector2.zero;
 
         if (Inputs.GetButton(PlayerIndex, Inputs.Button.Fire1)) {
+            direction = -1;
             walkForce = Vector2.zero;
             var waterForce = -faceVec * WaterForce;
             _rb.AddForce(waterForce);
@@ -67,6 +69,7 @@ public class WaterGuyController : MonoBehaviour
         } else {
             Sounds.SetWaterLoop(false);
             _rb.velocity *= 0.9f;
+            direction = -1;
         }
 
         _rb.AddForce(frictionForce + walkForce);

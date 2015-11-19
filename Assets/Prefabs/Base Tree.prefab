@@ -184,7 +184,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155500}
   m_LocalRotation: {x: 0, y: 0, z: -.370006472, w: .929029226}
-  m_LocalPosition: {x: .474646568, y: -3.84289145, z: 0}
+  m_LocalPosition: {x: 7.93045092, y: 4.37090015, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 400448}
@@ -213,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 193304}
   m_LocalRotation: {x: 0, y: 0, z: .370006472, w: .929029226}
   m_LocalPosition: {x: -.00511881337, y: .0108585339, z: -9.44999981}
-  m_LocalScale: {x: .463478893, y: .40765515, z: .593733072}
+  m_LocalScale: {x: .689999998, y: .689999998, z: .689999998}
   m_Children: []
   m_Father: {fileID: 425474}
   m_RootOrder: 1
@@ -4425,7 +4425,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bd46341a70ba9da48bbdd54348f2fadc, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: .391000003}
 --- !u!212 &21241206
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -4451,7 +4451,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: 59fe8f6967e4f464884917ec2bd144d3, type: 3}
-  m_Color: {r: .764705896, g: .764705896, b: .764705896, a: 1}
+  m_Color: {r: .566176474, g: .566176474, b: .566176474, a: 1}
 --- !u!212 &21254048
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -4477,7 +4477,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 7d3e2302ebcf8024eac9464b9bec9ee9, type: 3}
-  m_Color: {r: .764705896, g: .764705896, b: .764705896, a: 1}
+  m_Color: {r: .698529422, g: .698529422, b: .698529422, a: 1}
 --- !u!212 &21271476
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -4525,7 +4525,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Color.a
+      value: .391000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 155500}
