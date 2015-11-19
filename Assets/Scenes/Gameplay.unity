@@ -2010,6 +2010,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 162804, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
+      propertyPath: m_Name
+      value: WaterGirl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04e21f434903c4ca0a8c0cd456201818, type: 2}
   m_IsPrefabParent: 0
