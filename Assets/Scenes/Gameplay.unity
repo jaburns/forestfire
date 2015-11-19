@@ -941,11 +941,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
       propertyPath: KeepOutWindow.x
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
       propertyPath: KeepOutWindow.y
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
@@ -1526,11 +1526,11 @@ Prefab:
       objectReference: {fileID: 181640, guid: 04d3892666a974ab3a36364f7283a6a9, type: 2}
     - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
       propertyPath: KeepOutWindow.x
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
       propertyPath: KeepOutWindow.y
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acd976dc189464e64ba5d812a134af4e, type: 2}

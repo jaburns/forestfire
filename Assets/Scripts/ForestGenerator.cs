@@ -16,7 +16,7 @@ public class ForestGenerator : MonoBehaviour
             
             float x = (.5f - Random.value) * SpawnRange.x;
             float y = y = (.5f - Random.value) * SpawnRange.y;
-            while (Mathf.Abs(x) < KeepOutWindow.x || Mathf.Abs(y) < KeepOutWindow.y)
+            while (Mathf.Abs(x) < KeepOutWindow.x && Mathf.Abs(y) < KeepOutWindow.y)
             {
                 x = (.5f - Random.value) * SpawnRange.x;
                 y = y = (.5f - Random.value) * SpawnRange.y;
