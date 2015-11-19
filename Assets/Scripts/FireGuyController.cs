@@ -7,6 +7,7 @@ public class FireGuyController : MonoBehaviour
     public float Friction = 1.0f;
     public float WalkForce = 1.0f;
     public int FireBombPeriod = 10;
+    public Animator fireguyAnimator;
 
     public GameObject ExplosionPrefab;
 
@@ -17,6 +18,12 @@ public class FireGuyController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _nextBombCountdown = 0;
+    }
+
+    void Update()
+    {
+        if (_rb.velocity.sqrMagnitude > 0.1f)
+            fireguyAnimator.SetFloat("Speed", _rb.velocity.sqrMagnitude);
     }
 
     void FixedUpdate()
@@ -44,9 +51,10 @@ public class FireGuyController : MonoBehaviour
 
         if (Inputs.GetButton(PlayerIndex, Inputs.Button.Fire1)) {
             walkForce = Vector2.zero;
-            if (_nextBombCountdown == 0) {
+            if (_nextBombCountdown <= 0) {
                 _nextBombCountdown = FireBombPeriod;
                 fireBomb(faceVec);
+                fireguyAnimator.SetTrigger("Explode");
             }
         }
 

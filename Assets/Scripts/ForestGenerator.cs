@@ -7,14 +7,22 @@ public class ForestGenerator : MonoBehaviour
     public int SpawnCount;
     public float SmallSize;
     public float LargeSize;
+    public Vector2 KeepOutWindow;
+    
 
     void Awake()
     {
         for (int i = 0; i < SpawnCount; ++i) {
-            spawnTree(new Vector2 {
-                x = (.5f - Random.value) * SpawnRange.x,
-                y = (.5f - Random.value) * SpawnRange.y
-            });
+            
+            float x = (.5f - Random.value) * SpawnRange.x;
+            float y = y = (.5f - Random.value) * SpawnRange.y;
+            while (Mathf.Abs(x) < KeepOutWindow.x || Mathf.Abs(y) < KeepOutWindow.y)
+            {
+                x = (.5f - Random.value) * SpawnRange.x;
+                y = y = (.5f - Random.value) * SpawnRange.y;
+            }
+
+            spawnTree(new Vector2 (x, y));
         }
     }
 

@@ -261,9 +261,34 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -.0399999991
       objectReference: {fileID: 0}
+    - target: {fileID: 11487274, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
+      propertyPath: fireguyAnimator
+      value: 
+      objectReference: {fileID: 122808014}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &122808013 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 119668, guid: ceae3aa5a80bbe940922a5398878109a, type: 2}
+  m_PrefabInternal: {fileID: 122808012}
+--- !u!95 &122808014
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 122808013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c64da5788b989949b3c0b5afa37e7ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &211895595
 Prefab:
   m_ObjectHideFlags: 0
@@ -914,6 +939,14 @@ Prefab:
       propertyPath: SpawnCount
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
+      propertyPath: KeepOutWindow.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
+      propertyPath: KeepOutWindow.y
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
   m_IsPrefabParent: 0
@@ -1436,48 +1469,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1078948910}
---- !u!1001 &1080665745
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 425474, guid: 3bb1b22db5b1ac54ab509e88e6601846, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: .474646568
-      objectReference: {fileID: 0}
-    - target: {fileID: 425474, guid: 3bb1b22db5b1ac54ab509e88e6601846, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -3.84289145
-      objectReference: {fileID: 0}
-    - target: {fileID: 425474, guid: 3bb1b22db5b1ac54ab509e88e6601846, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 425474, guid: 3bb1b22db5b1ac54ab509e88e6601846, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 425474, guid: 3bb1b22db5b1ac54ab509e88e6601846, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 425474, guid: 3bb1b22db5b1ac54ab509e88e6601846, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -.370006472
-      objectReference: {fileID: 0}
-    - target: {fileID: 425474, guid: 3bb1b22db5b1ac54ab509e88e6601846, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: .929029226
-      objectReference: {fileID: 0}
-    - target: {fileID: 425474, guid: 3bb1b22db5b1ac54ab509e88e6601846, type: 2}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3bb1b22db5b1ac54ab509e88e6601846, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1107465526
 Prefab:
   m_ObjectHideFlags: 0
@@ -1533,6 +1524,14 @@ Prefab:
       propertyPath: TreePrefab
       value: 
       objectReference: {fileID: 181640, guid: 04d3892666a974ab3a36364f7283a6a9, type: 2}
+    - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
+      propertyPath: KeepOutWindow.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497568, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
+      propertyPath: KeepOutWindow.y
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: acd976dc189464e64ba5d812a134af4e, type: 2}
   m_IsPrefabParent: 0
