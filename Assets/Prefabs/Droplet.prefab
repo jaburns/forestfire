@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62a1986a39b040edb91f251ecd6a1b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lifetime: 2
+  Lifetime: .200000003
   DropletLarge: {fileID: 2100000, guid: 91f0c931e1aad4c57a7627d21d1b10e8, type: 2}
   DropletMedium: {fileID: 2100000, guid: b19b6ef1d752146e8aad359a97d6afd6, type: 2}
   DropletSmall: {fileID: 2100000, guid: 4eb8c998310b26d4f9e36151280abdaf, type: 2}
@@ -143,6 +143,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Mass
       value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Lifetime
+      value: .200000003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

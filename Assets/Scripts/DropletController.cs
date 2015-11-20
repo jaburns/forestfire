@@ -29,6 +29,7 @@ public class DropletController : MonoBehaviour
             _rb.velocity = 05 * dir * Random.Range(0.95f, 1.05f);
             _rb.drag = Random.Range(0f, 1.0f);
             GetComponent<Renderer>().material = DropletSmall;
+            Lifetime = Random.Range(Lifetime, Lifetime * 3);
 
         }
         else if (rand < MediumRatio + SmallRatio)
@@ -39,6 +40,7 @@ public class DropletController : MonoBehaviour
             _rb.velocity = 40 * dir * Random.Range(0.95f, 1.05f);
             _rb.drag = Random.Range(0.1f, 0.3f);
             GetComponent<Renderer>().material = DropletMedium;
+            Lifetime = Random.Range(Lifetime, Lifetime * 2);
         }
         else
         {
@@ -48,6 +50,7 @@ public class DropletController : MonoBehaviour
             _rb.velocity = 50 * dir * Random.Range(0.95f, 1.05f);
             _rb.drag = Random.Range(0f, 0.2f);
             GetComponent<Renderer>().material = DropletLarge;
+            Lifetime = Random.Range(Lifetime, Lifetime * 1.5f);
         }
 
         StartCoroutine(dieAfterLifetime());
