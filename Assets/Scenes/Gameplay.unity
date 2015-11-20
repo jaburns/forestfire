@@ -1705,7 +1705,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 432234, guid: 4a65991b8f1644d3d8b97742164d5f38, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1134.43005
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 432234, guid: 4a65991b8f1644d3d8b97742164d5f38, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1725,7 +1725,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 432234, guid: 4a65991b8f1644d3d8b97742164d5f38, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 11437930, guid: 4a65991b8f1644d3d8b97742164d5f38, type: 2}
       propertyPath: targets.Array.data[0]
